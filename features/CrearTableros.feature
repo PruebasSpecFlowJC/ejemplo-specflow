@@ -1,5 +1,5 @@
 
-Feature: Agregar Libros
+Feature: Crear Tableros
 	Yo cómo profesor 
     deseo crear tableros al interior de una sesión de clase
     para que lo vean los estudiantes
