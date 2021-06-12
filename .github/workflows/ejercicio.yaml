@@ -7,6 +7,7 @@ jobs:
     env:
       SPECFLOW_PROJECT: SpecFlow.Ejemplo
     runs-on: ubuntu-latest
+    container: sebas95/ubuntumono:version1
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -18,14 +19,6 @@ jobs:
 
       - name: Build
         run: dotnet build
-
-      - name: Setup mono
-        run: |
-          sudo apt install gnupg ca-certificates
-          sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-          echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-          sudo apt update
-          sudo apt install -y mono-devel
 
       - name: Test
         run: dotnet test
