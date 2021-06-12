@@ -4,10 +4,10 @@ on : [push]
 
 jobs: 
   build:
+    runs-on: ubuntu-latest
+    # container: sebas95/ubuntumono:version1
     env:
       SPECFLOW_PROJECT: SpecFlow.Ejemplo
-    runs-on: ubuntu-latest
-    container: sebas95/ubuntumono:version1
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
